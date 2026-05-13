@@ -1,20 +1,6 @@
 # nfactorial_sudoku
 
-Мобильное приложение Sudoku Premium с бэкендом, уведомлениями, статьями и игровой статистикой.
-
-Это решение для любителей судоку, которые хотят тренировать логическое мышление, отслеживать прогресс и получать персональные уведомления о событиях в приложении.
-
-Ценно тем, что сочетает удобный интерфейс, систему достижений и синхронизацию данных через API.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Мобильное приложение Sudoku типо коллаборация с nfactorial с бэкендом, уведомлениями, статьями и игровой статистикой. Сделана за один день
+Сделана на флаттере, бэк на пайтоне, база данных postgresql. 
+Это решение для любителей судоку, которые хотят тренировать логическое мышление, отслеживать прогресс и получать персональные уведомления о событиях в приложении. Самое главное что там есть коуч, который поможет обьяснит как играть в судоку, если ты начинаешь с нуля. Также специальный милый маскот с которым просто приятно смотреть приложение и играть, так как другие приложения из за отсутствия легкости маскота и игровой эстетики кажутся слишком серьезными что пугает и отбивает желания учиться играть в судоку.
+Ценно тем, что сочетает удобный интерфейс, систему достижений и синхронизацию данных через API. 
