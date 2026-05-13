@@ -41,7 +41,8 @@ Vercel по умолчанию даст домен вида `nfactorial-sudoku.v
 - `build/web` — статический вывод Flutter Web.
 - `vercel.json` — конфигурация для раздачи статических файлов.
 - `lib/core/api/api_config.dart` — настройка URL backend для production.
-- `render.yaml` — пример Render конфигурации для backend и frontend.
+- `render.yaml` — пример Render конфигурации для backend.
+- `backend/runtime.txt` — указание Python 3.13 для Render backend.
 
 Если хотите, я могу помочь настроить отдельный хостинг для FastAPI и связать его с проектом.
 
