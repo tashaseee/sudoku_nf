@@ -41,8 +41,24 @@ Vercel по умолчанию даст домен вида `nfactorial-sudoku.v
 - `build/web` — статический вывод Flutter Web.
 - `vercel.json` — конфигурация для раздачи статических файлов.
 - `lib/core/api/api_config.dart` — настройка URL backend для production.
+- `render.yaml` — пример Render конфигурации для backend и frontend.
 
 Если хотите, я могу помочь настроить отдельный хостинг для FastAPI и связать его с проектом.
+
+## Render (альтернатива Railway)
+
+Если Railway не подходит, можно разместить backend на Render:
+
+1. Зарегистрируйтесь на https://render.com и подключите GitHub.
+2. В корне репозитория есть `render.yaml`.
+3. Render автоматически развернёт backend из папки `backend`.
+4. Backend будет запущен с командой:
+   - `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+5. В Render создайте PostgreSQL базу и установите `DATABASE_URL`.
+6. После деплоя проверьте:
+   - `https://<ваш-backend>.onrender.com/api/health`
+
+> Если backend не стартует, проверьте, что `DATABASE_URL` задан и доступен.
 
 ## Связка frontend + backend
 
