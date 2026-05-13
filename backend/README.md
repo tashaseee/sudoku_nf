@@ -80,6 +80,44 @@ cd backend && bash setup.sh
 | POST   | `/api/articles/`           | Создать статью              | ✅   |
 | GET    | `/api/health`              | Проверка состояния API      | ❌   |
 
+## Деплой backend
+
+Backend можно бесплатно разместить на Render, Railway или Azure.
+
+### Render
+1. Создайте аккаунт на https://render.com и подключите репозиторий GitHub.
+2. Добавьте новый Web Service с папкой `backend`.
+3. Build Command: `pip install -r requirements.txt`
+4. Start Command: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
+5. Создайте PostgreSQL базу данных на Render (Starter / free).
+6. В настройках сервиса установите `DATABASE_URL` из Render.
+
+### Railway
+1. Зарегистрируйтесь на https://railway.app и создайте проект.
+2. Выберите Deploy from GitHub и папку `backend`.
+3. Railway автоматически увидит `requirements.txt`.
+4. Создайте PostgreSQL плагин.
+5. В настройках проекта добавьте переменную `DATABASE_URL`.
+   - Railway предложит готовый URL после создания PostgreSQL плагина.
+6. Убедитесь, что `Procfile` в папке `backend` существует и содержит:
+   - `web: uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+7. После деплоя проверьте:
+   - `https://<ваш-backend>.up.railway.app/api/health`
+   - если ответ `status: ok`, значит backend запущен.
+
+> Важно: если `DATABASE_URL` не задан, backend будет пытаться подключиться к локальному PostgreSQL и запуск завершится с ошибкой.
+
+### Azure
+1. Создайте App Service for Linux (Python 3.13).
+2. Подключите GitHub репозиторий и папку `backend`.
+3. Set startup command: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
+4. Добавьте `DATABASE_URL` в Application Settings.
+
+### Важно
+- В production `DATABASE_URL` должен быть публичным URL вашей PostgreSQL.
+- `backend/Dockerfile` помогает, если платформа просит Docker deploy.
+- После деплоя вы получите публичный URL backend, например `https://sudoku-backend.onrender.com`.
+
 ## Модели базы данных
 
 - **users** — пользователи (email, username, hashed_password, is_pro)
